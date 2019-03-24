@@ -6,7 +6,7 @@
  ///
  
 #include <stdio.h>
-#include <conio.h>
+//#include <conio.h>
 #include <unistd.h>
 #include <iostream>
 using namespace std;
@@ -15,8 +15,8 @@ int main()
 {
     string exp;
     //char exp[1000000];
-    getline(cin,exp,'=');
-    //char c;
+    //getline(cin,exp,'=');
+    char c;
     //read(1,&c,1);
     //while(c != '='){
     //    exp += c;
@@ -25,12 +25,12 @@ int main()
     //cin >> exp;
     //cin >> c;
     //int j = 0;
-    //c = getch();
-    //while((c = _getch()) != '='){
-    //    exp += c;
-    //    //exp[j] = c;
-    //    ++j;
-    //}
+    
+    while((c = getchar()) != '='){
+        exp += c;
+        //exp[j] = c;
+        //++j;
+    }
     int sum = 0;
     int tmp = 0;
     int flag = 0;
