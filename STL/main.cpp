@@ -9,7 +9,7 @@
 #include "String.h"
 using namespace std;
 
-int main(){
+void test1(){
 	String s;
     String h("hello");
     String hh = "world";
@@ -22,5 +22,22 @@ int main(){
     String s4(10,'c');
     cout << s4 << endl;
     hh = hh;
+}
+
+void test2(){
+    String s1 = "hello";
+    cout << "-" << endl;
+    String s2;
+    s2 = "world";
+    cout << &s1 << endl;
+    s1 += s2;
+    s1 += ".";
+    s1 += '.';
+    cout << &s1 << endl;
+    cout << s1 << endl;
+}
+
+int main(){
+    test2();
 	return 0;
 }
