@@ -20,9 +20,10 @@ using std::size_t;
 
 class String{
 public:
+    explicit //必须显示转换
     String(const char* str = "");
     //String(const String s);
-    String(const String & str);
+    String(const String & str);//复制构造
     String(const int n, const char c);
     String& operator=(const String &str);
     String& operator+=(const String &str);
