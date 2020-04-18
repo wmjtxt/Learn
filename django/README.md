@@ -12,8 +12,8 @@
 # 目录
 @[TOC]
 
-- [0.环境搭建](###0环境搭建)
-- [1.新建Django项目](###1新建django项目)
+- [0.环境搭建](#0环境搭建)
+- [1.新建Django项目](#1新建django项目)
 - [2.Django应用](#2django应用)
 - [3.第一个视图：Hello,World](#3第一个视图helloworld)
 - [4.系统设计](#4系统设计)
@@ -26,8 +26,7 @@
 - [11.]()
 - [12.]()
 
-## 建站步骤（简略）
-### 0.环境搭建
+## 0.环境搭建
 * 安装python3
     * 略
 * 安装Virtualenv
@@ -40,7 +39,7 @@
 * 安装Django
     * `pip install django==1.11.4`
 
-### 1.新建Django项目
+## 1.新建Django项目
 
 * **创建Django项目**: 在myproject文件夹下，开启虚拟环境后，执行下面的命令，创建新的Django项目, 其中`myproject`为项目名称:
     * `django-admin startproject myproject`
@@ -55,7 +54,7 @@
 * **开启服务器**: 在manage.py所在文件夹下，执行下面的命令，开启网络服务器:
     * `python manage.py runserver`
 
-### 2.Django应用
+## 2.Django应用
 
 * 在Django项目中，有两个重要的概念：
     * **app**: 完成某个任务的web应用程序, app由models（数据库表）, views（视图）, templates（模板）, tests（测试）组成。
@@ -74,7 +73,7 @@
 * **启用boards应用**
     * 找到settings.py的`INSTALLED_APPS`列表, 将应用`'boards'`添加到该列表中。
 
-### 3.第一个视图：Hello, World!
+## 3.第一个视图：Hello, World!
 
 在views.py和urls.py中添加如下代码:
 
@@ -99,7 +98,7 @@ urlpatterns = [
 
 执行命令`python manage.py runserver`，在浏览器打开http://127.0.0.1:8000，可以看到效果啦
 
-### 4.系统设计
+## 4.系统设计
 项目是一个论坛系统，由多个板块(Boards)组成, 板块由主题帖(Topic)组成，主题帖里有回复帖(Post)，主题帖和回复帖均由用户(User)创建。
 
 所以这个项目共包含四个类Board, Topic, Post, User。由于Django在contrib中内置了User类，所以只需创建其余三个类。
@@ -116,7 +115,7 @@ urlpatterns = [
     * Topic: 包括四个字段：subject，last\_update，starter, board
     * Post: 有一个message字段，用于存储回复内容，create\_at，update\_at
 
-### 5.Django模型设计
+## 5.Django模型设计
 
 Board, Topic, Post这些模型的设计对应着应用程序的数据库设计。
 
@@ -149,7 +148,7 @@ class Post(models.Model):
 
 上面所有模型都是django.db.models.Model类的子类，每个类都将被转换成数据库表。
 
-### 6.迁移模型
+## 6.迁移模型
 
 迁移模型就是告诉Django创建数据库，分两步
 
@@ -157,7 +156,7 @@ class Post(models.Model):
 
 第二步，执行`python manage.py migrate`，这一步根据迁移文件生成数据库。
 
-### 7.模型操作
+## 7.模型操作
 
 建好模型，就可以对它进行操作了。
 
@@ -176,7 +175,7 @@ class Post(models.Model):
 |通过字段标识获取单个对象|Board.objects.get(id=1)|
 
 
-### 8.测试
+## 8.测试
 
 测试环节非常重要。比如下面的简单例子:
 
@@ -197,11 +196,11 @@ class HomeTests(TestCase):
 `python manage.py test --verbosity=2`
 `verbosity为0表示无输出，为1表示正常输出，2表示详细输入`
 
-### 9.静态文件设置
+## 9.静态文件设置
 
 静态文件是指CSS, JavaScript
 
 
-### 10.Django Admin
+## 10.Django Admin
 
-### 11.
+## 11.
